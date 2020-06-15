@@ -1,0 +1,103 @@
+:root {
+  --hue-neutral: 191;
+  --hue-wrong: 18;
+  --hue-correct: 84;
+}
+
+body {
+  --hue: var(--hue-neutral);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat Alternates", sans-serif;
+  background-color: hsl(var(--hue), 100%, 83%);
+}
+
+body.correct {
+  --hue: var(--hue-correct);
+}
+
+body.wrong {
+  --hue: var(--hue-wrong);
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+}
+
+.container {
+  background-color: white;
+  border: 0.5px solid grey;
+  border-radius: 20px;
+  padding: 40px;
+  width: 80%;
+  max-width: 650px;
+  box-shadow: 7px 7px 18px -8px rgba(0, 0, 0, 0.3);
+}
+
+.hide {
+  display: none;
+}
+
+.answers-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 30px;
+  margin: 40px 0;
+}
+
+button {
+  outline: none;
+  border-width: 1.5px;
+  border-radius: 10px;
+  font-family: "Montserrat Alternates", sans-serif;
+  cursor: pointer;
+}
+
+.answer {
+  height: 50px;
+  font-size: 15px;
+  --hue: var(--hue-neutral);
+  background-color: hsl(var(--hue), 100%, 95%);
+}
+
+.answer.correct {
+  --hue: var(--hue-correct);
+  cursor: default;
+}
+
+.answer.wrong {
+  --hue: var(--hue-wrong);
+  cursor: default;
+}
+
+.answer:hover {
+  border: 2px solid hsl(var(--hue), 100%, 42%);
+}
+
+.answer.correct:hover,
+.answer.wrong:hover {
+  border: 1.5px solid black;
+}
+
+.controls-container {
+  text-align: center;
+}
+
+.start,
+.next {
+  width: 200px;
+  height: 58px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-color: white;
+  background-color: hsl(191, 100%, 42%);
+}
